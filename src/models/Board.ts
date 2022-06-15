@@ -1,5 +1,6 @@
 import { Cell } from "./Cell";
 import { Colors } from "./Colors";
+import { King } from "./figures/King";
 import { Pawn } from "./figures/Pawn";
 import { Queen } from "./figures/Queen";
 
@@ -30,7 +31,13 @@ export class Board {
     }
   }
 
+  private addKings(){
+    new King(Colors.BLACK, this.getCell(4, 0));
+    new King(Colors.WHITE, this.getCell(4, 7));  
+  }
+
   public addFigures() {
     this.addPawns();
+    this.addKings();
   }
 }
