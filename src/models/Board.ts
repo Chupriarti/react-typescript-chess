@@ -2,6 +2,7 @@ import { Cell } from "./Cell";
 import { Colors } from "./Colors";
 import { Bishop } from "./figures/Bishop";
 import { King } from "./figures/King";
+import { Knight } from "./figures/Knight";
 import { Pawn } from "./figures/Pawn";
 import { Queen } from "./figures/Queen";
 
@@ -49,10 +50,18 @@ export class Board {
     new Bishop(Colors.WHITE, this.getCell(5, 7));  
   }
 
+  private addKnights(){
+    new Knight(Colors.BLACK, this.getCell(1, 0));
+    new Knight(Colors.BLACK, this.getCell(6, 0));  
+    new Knight(Colors.WHITE, this.getCell(1, 7));
+    new Knight(Colors.WHITE, this.getCell(6, 7));  
+  }
+
   public addFigures() {
     this.addPawns();
     this.addKings();
     this.addQueens();
     this.addBishops();
+    this.addKnights();  
   }
 }
