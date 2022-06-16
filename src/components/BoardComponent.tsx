@@ -12,7 +12,9 @@ const BoardComponent: React.FC<BoardProps> = ({board, setBoard}) => {
   const [selectedCell, setSelectedCell] = React.useState<Cell | null>(null)
 
   function click(cell: Cell) {
-    setSelectedCell(cell);
+    if (cell.figure){
+      setSelectedCell(cell);
+    }
   }
 
   return (
