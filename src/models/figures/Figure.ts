@@ -29,7 +29,7 @@ export class Figure {
     this.id = Math.random();
   }
 
-  canMover(target: Cell) : boolean {
+  canMove(target: Cell) : boolean {
     return true;
   }
 
